@@ -24,7 +24,6 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) =
 
 // Componente para la página de inicio
 const LandingPage = () => {
-  const { isAuthenticated } = useAuth();
   const handleRegisterClick = () => {
     // Implementar lógica para abrir el modal de registro
   };
@@ -57,8 +56,6 @@ const DashboardRoutes = () => (
 );
 
 const AppRoutes = () => {
-  const { isAuthenticated } = useAuth();
-
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />

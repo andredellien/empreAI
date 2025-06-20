@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Box,
   Container,
   Typography,
   Button,
-  Grid,
   TextField,
   CircularProgress,
   Alert,
@@ -18,7 +17,6 @@ import {
   CardActions
 } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
 import api from '../../config/axios';
 
 interface Business {
