@@ -8,8 +8,14 @@ const imageRoutes = require('./routes/imageRoutes');
 
 const app = express();
 
-// Middleware básico
-app.use(cors());
+// Configuración de CORS para desarrollo y producción
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://TU-FRONTEND-DEPLOY.render.com' // Reemplaza por tu dominio real de frontend en producción
+  ],
+  credentials: true,
+}));
 app.use(express.json());
 
 // Rutas
