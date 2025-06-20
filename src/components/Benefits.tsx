@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Container, Typography, Grid } from '@mui/material';
 import {
   TrendingUp as TrendingUpIcon,

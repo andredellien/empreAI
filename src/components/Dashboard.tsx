@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -10,7 +9,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  IconButton,
   useTheme
 } from '@mui/material';
 import {
