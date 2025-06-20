@@ -34,6 +34,7 @@ interface Business {
   name: string;
   category: string;
   description: string;
+  type: string;
   BusinessSetting: {
     tone: string;
     targetAudience: string;
@@ -52,6 +53,7 @@ const Businesses = () => {
     name: '',
     category: '',
     description: '',
+    type: '',
     tone: '',
     targetAudience: '',
     keywords: ''
@@ -80,6 +82,7 @@ const Businesses = () => {
         name: business.name,
         category: business.category,
         description: business.description,
+        type: business.type || '',
         tone: business.BusinessSetting?.tone || '',
         targetAudience: business.BusinessSetting?.targetAudience || '',
         keywords: business.BusinessSetting?.keywords?.join(', ') || ''
@@ -90,6 +93,7 @@ const Businesses = () => {
         name: '',
         category: '',
         description: '',
+        type: '',
         tone: '',
         targetAudience: '',
         keywords: ''
@@ -110,6 +114,7 @@ const Businesses = () => {
         name: formData.name,
         category: formData.category,
         description: formData.description,
+        type: formData.type,
         BusinessSetting: {
           tone: formData.tone,
           targetAudience: formData.targetAudience,
@@ -311,6 +316,15 @@ const Businesses = () => {
                   value={formData.category}
                   onChange={(e) => setFormData({ ...formData, category: e.target.value })}
                   required
+                />
+              </Box>
+              <Box>
+                <TextField
+                  fullWidth
+                  label="Tipo de Negocio"
+                  value={formData.type}
+                  onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                  placeholder="Ej: Restaurante, Tienda online, Consultoría"
                 />
               </Box>
               <Box>

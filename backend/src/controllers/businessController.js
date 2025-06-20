@@ -6,14 +6,15 @@ const { Op } = require('sequelize');
 // @access  Private
 exports.createBusiness = async (req, res) => {
   try {
-    const { name, category, description, BusinessSetting: settings } = req.body;
+    const { name, category, description, type, BusinessSetting: settings } = req.body;
 
     // Crear el negocio
     const business = await Business.create({
       userId: req.user.id,
       name,
       category,
-      description
+      description,
+      type
     });
 
     // Crear la configuración del negocio
@@ -126,7 +127,7 @@ exports.getBusiness = async (req, res) => {
 // @access  Private
 exports.updateBusiness = async (req, res) => {
   try {
-    const { name, category, description, BusinessSetting } = req.body;
+    const { name, category, description, type, BusinessSetting } = req.body;
 
     const business = await Business.findOne({
       where: {
@@ -143,7 +144,8 @@ exports.updateBusiness = async (req, res) => {
     await business.update({
       name,
       category,
-      description
+      description,
+      type
     });
 
     // Actualizar configuración

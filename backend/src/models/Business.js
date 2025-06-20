@@ -28,6 +28,10 @@ const Business = sequelize.define('Business', {
   description: {
     type: DataTypes.TEXT,
     allowNull: true
+  },
+  type: {
+    type: DataTypes.STRING(100),
+    allowNull: true
   }
 }, {
   tableName: 'Businesses',
