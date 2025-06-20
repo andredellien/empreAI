@@ -12,7 +12,9 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:5173',
-    'https://TU-FRONTEND-DEPLOY.render.com' // Reemplaza por tu dominio real de frontend en producción
+    'https://TU-FRONTEND-DEPLOY.render.com',
+    'https://empre-ai-au5w.vercel.app'
+    //  // Reemplaza por tu dominio real de frontend en producción
   ],
   credentials: true,
 }));
