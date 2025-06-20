@@ -2,11 +2,12 @@ const { Sequelize } = require('sequelize');
 require('dotenv').config();
 
 const sequelize = new Sequelize(
-  'empreai',
-  'sa',
-  'NuevaContraseña123',
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
   {
-    host: 'localhost',
+    host: process.env.DB_HOST,
+    port: process.env.DB_PORT || 1433,
     dialect: 'mssql',
     dialectOptions: {
       options: {
